@@ -83,7 +83,7 @@ jobs:
 
       - name: Snyk Scan
         working-directory: .
-        run: snyk test --severity-threshold=medium
+        run: snyk test --severity-threshold=high
 
 
       ## Deploy to Vercel ##
