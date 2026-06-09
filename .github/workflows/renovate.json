@@ -1,7 +1,19 @@
 {
-  "extends": ["config:recommended"],
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
 
-  "labels": ["dependencies", "security"],
+  "extends": [
+    "config:recommended",
+    ":dependencyDashboard"
+  ],
+
+  "labels": [
+    "dependencies",
+    "security"
+  ],
+
+  "vulnerabilityAlerts": {
+    "enabled": true
+  },
 
   "packageRules": [
     {
@@ -9,12 +21,12 @@
       "automerge": true
     },
     {
+      "matchManagers": ["npm"],
+      "groupName": "npm dependencies"
+    },
+    {
       "matchManagers": ["github-actions"],
       "groupName": "github-actions"
     }
-  ],
-
-  "vulnerabilityAlerts": {
-    "enabled": true
-  }
+  ]
 }
