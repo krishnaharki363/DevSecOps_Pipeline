@@ -1,0 +1,20 @@
+{
+  "extends": ["config:recommended"],
+
+  "labels": ["dependencies", "security"],
+
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["patch"],
+      "automerge": true
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "github-actions"
+    }
+  ],
+
+  "vulnerabilityAlerts": {
+    "enabled": true
+  }
+}
